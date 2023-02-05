@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Distillery!" modversion="1.0.0" corepackage="False" gameversion="0.21.6.0">
+  <Item file="%ModDir%/items.xml" />
+</contentpackage>
