@@ -10,3 +10,5 @@ More recipes are planned, however there needs to be a better way to put them in 
 Currently, I have to completely override Ethanol for the recipes, which is most likely horrible for mod compatibility.
 
 [i]Suggestions and ideas are welcome![/i]
+
+[url=https://github.com/xolophreny/BarotraumaMods]Github![/url]
