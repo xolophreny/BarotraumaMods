@@ -1,73 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
-  <Override>
-    <Item
-      name="Distillery"
-      identifier="op_gardendistiller"
-      width="370"
-      height="355"
-      scale="0.5"
-      noninteractable="False"
-      linkable="False"
-      tags="distillery,donttakeitems,dontsellitems"
-      category="Decorative">
+  <!--<Ethanol name="" identifier="ethanol_distilled" variantof="ethanol" aliases="ethanol" nameidentifier="ethanol" hideinmenus="true" >
+    <Fabricate suitablefabricators="distillery" requiredtime="120" requiredmoney="0" amount="2" >
+      <RequiredSkill identifier="medical" level="35" />
+      <RequiredSkill identifier="helm" level="40" />
+      <RequiredItem identifier="carbon" amount="2" />
+      <RequiredItem identifier="phosphorus" />
+      <RequiredItem identifier="silicon" />
+    </Fabricate>
+  </Ethanol>-->
 
-      <sprite texture="Content/Map/Outposts/Art/CafeteriaGardenAssets.png" sourcerect="606,2,370,355" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
-      <Fabricator canbeselected="true" powerconsumption="0.0" msg="ItemMsgInteractSelect">
-        <GuiFrame relativesize="0.4,0.45" style="ItemUI" anchor="Center" />
-        <sound file="Content/Items/Fabricators/Fabricator.ogg" type="OnActive" range="400" loop="true" />
-      </Fabricator>
-      <ItemContainer capacity="5" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true"/>
-      <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true"/>
-    </Item>
-
-    <Ethanol name="" identifier="ethanol" category="Medical,Material" maxstacksize="8" cargocontaineridentifier="chemicalcrate" description="" Tags="smallitem,chem,medical,petfood2" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
-      <Upgrade gameversion="0.10.0.0" scale="0.5" />
-      <PreferredContainer primary="sprayer" amount="1" spawnprobability="1"/>
-      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.2" />
-      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="2" spawnprobability="0.3" />
-      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.5" notcampaign="true"/>
-      <PreferredContainer primary="medfabcab" secondary="medcab"/>
-      <Price baseprice="60" minavailable="6" >
-        <Price storeidentifier="merchantoutpost" />
-        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="8" />
-        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="10" />
-        <Price storeidentifier="merchantmilitary" multiplier="1.1" />
-        <Price storeidentifier="merchantmine" multiplier="1.1" />
-      </Price>
-      <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="80" fabricationlimitmin="5" fabricationlimitmax="10"/>
-      <Fabricate suitablefabricators="distillery" requiredtime="120" amount="2">
-        <RequiredSkill identifier="medical" level="35" />
-        <RequiredSkill identifier="helm" level="50" />
-        <RequiredItem identifier="carbon" amount="2" />
-        <RequiredItem identifier="phosphorus" />
-        <RequiredItem identifier="silicon" />
-      </Fabricate>
-      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="256,768,64,64" origin="0.5,0.5" />
-      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="435,452,30,57" depth="0.6" origin="0.5,0.5" />
-      <Body width="30" height="55" density="10.2" />   
-      <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
-        <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0"/>
-        <StatusEffect type="OnSecondaryUse" target="This,Character">
-          <Conditional Condition="lte 1" />
-          <Use/>
-        </StatusEffect>
-        <StatusEffect type="OnUse" target="This" Condition="-100.0" setvalue="true">
-          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
-        </StatusEffect>
-        <StatusEffect type="OnUse" target="UseTarget" delay="10" duration="10">
-          <Affliction identifier="drunk" amount="2.0" />
-          <ReduceAffliction identifier="psychosis" amount="2.0" />
-          <ReduceAffliction identifier="hallucinating" amount="2.0" />
-        </StatusEffect>
-        <StatusEffect type="OnUse" target="UseTarget" disabledeltatime="true">
-          <Affliction identifier="psychosisresistance" amount="600" />
-        </StatusEffect>
-        <StatusEffect type="OnBroken" target="This">
-          <Remove />
-        </StatusEffect>
-      </Holdable>
-      <AiTarget sightrange="1000" static="true" />
-    </Ethanol>
-  </Override>
+<Override>
+  <Ethanol name="" identifier="ethanol" category="Medical,Material" maxstacksize="8" cargocontaineridentifier="chemicalcrate" description="" Tags="smallitem,chem,medical,petfood2" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <PreferredContainer primary="sprayer" amount="1" spawnprobability="1"/>
+    <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.2" />
+    <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="2" spawnprobability="0.3" />
+    <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.5" notcampaign="true"/>
+    <PreferredContainer primary="medfabcab" secondary="medcab"/>
+    <Price baseprice="60" minavailable="6" >
+      <Price storeidentifier="merchantoutpost" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="8" />
+      <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="10" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" />
+      <Price storeidentifier="merchantmine" multiplier="1.1" />
+    </Price>
+    <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="80" fabricationlimitmin="5" fabricationlimitmax="10"/>
+    <Fabricate suitablefabricators="distillery" requiredtime="120" requiredmoney="0" amount="2" >
+      <RequiredSkill identifier="medical" level="35" />
+      <RequiredSkill identifier="helm" level="40" />
+      <RequiredItem identifier="carbon" amount="2" />
+      <RequiredItem identifier="phosphorus" />
+      <RequiredItem identifier="silicon" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="256,768,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="435,452,30,57" depth="0.6" origin="0.5,0.5" />
+    <Body width="30" height="55" density="10.2" />   
+    <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0"/>
+      <StatusEffect type="OnSecondaryUse" target="This,Character">
+        <Conditional Condition="lte 1" />
+        <Use/>
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" setvalue="true">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="UseTarget" delay="10" duration="10">
+        <Affliction identifier="drunk" amount="2.0" />
+        <ReduceAffliction identifier="psychosis" amount="2.0" />
+        <ReduceAffliction identifier="hallucinating" amount="2.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="UseTarget" disabledeltatime="true">
+        <Affliction identifier="psychosisresistance" amount="600" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <AiTarget sightrange="1000" static="true" />
+  </Ethanol>
+</Override>
 </Items>
