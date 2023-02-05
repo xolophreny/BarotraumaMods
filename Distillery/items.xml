@@ -19,7 +19,7 @@
     <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="2" spawnprobability="0.3" />
     <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.5" notcampaign="true"/>
     <PreferredContainer primary="medfabcab" secondary="medcab"/>
-    <Price baseprice="50" minavailable="6" >
+    <Price baseprice="60" minavailable="6" >
       <Price storeidentifier="merchantoutpost" />
       <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="8" />
       <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="10" />
@@ -100,7 +100,7 @@
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnUse" target="UseTarget" duration="30">
         <Affliction identifier="psychosis" amount="2.5" />
-        <Affliction identifier="drunk" amount="2" />
+        <Affliction identifier="drunk" amount="2.4" />
       </StatusEffect>
       <StatusEffect type="OnBroken" target="This">
         <Remove />
