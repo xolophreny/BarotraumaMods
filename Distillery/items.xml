@@ -27,7 +27,7 @@
       <Price storeidentifier="merchantmine" multiplier="1.1" />
     </Price>
     <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="80" fabricationlimitmin="5" fabricationlimitmax="10"/>
-    <Fabricate suitablefabricators="distillery" requiredtime="120" requiredmoney="0" amount="2" >
+    <Fabricate suitablefabricators="distillery" requiredtime="55" requiredmoney="0" amount="2" >
       <RequiredSkill identifier="medical" level="35" />
       <RequiredSkill identifier="helm" level="30" />
       <RequiredItem identifier="carbon" amount="2" />

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Distillery!" modversion="1.0.0" corepackage="False" gameversion="0.21.6.0">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Distillery!" modversion="1.0.0" corepackage="False" steamworkshopid="2928705488" gameversion="0.21.6.0">
   <Item file="%ModDir%/items.xml" />
   <Item file="%ModDir%/distillery.xml" />
   <Other file="%ModDir%/Lua/Autorun/distillery.lua" />
