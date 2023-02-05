@@ -99,8 +99,11 @@
       </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnUse" target="UseTarget" duration="30">
-        <Affliction identifier="psychosis" amount="2.5" />
-        <Affliction identifier="drunk" amount="2.4" />
+        <Affliction identifier="psychosis" amount="2.4" />
+        <Affliction identifier="drunk" amount="2.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="UseTarget" delay="8" duration="5">
+        <Affliction identifier="incrementalstun" amount="24" />
       </StatusEffect>
       <StatusEffect type="OnBroken" target="This">
         <Remove />
