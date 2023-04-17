@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Safe Repairs" modversion="1.0.0" corepackage="False" gameversion="0.21.6.0">
+	<Item file="%ModDir%/dummyitem.xml" />
+	<Other file="%ModDir%/Lua/Autorun/saferepairs.lua" />
+</contentpackage>
