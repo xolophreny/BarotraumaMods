@@ -1,9 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Distillery!" modversion="1.0.3" corepackage="False" steamworkshopid="2928705488" gameversion="0.21.6.0">
+<contentpackage name="Distillery!" modversion="1.1.0" corepackage="False" steamworkshopid="2928705488" gameversion="1.1.19.3">
   <Item file="%ModDir%/items.xml" />
+  <Item file="%ModDir%/overrides.xml" />
   <Item file="%ModDir%/distillery.xml" />
+  <Talents file="%ModDir%/talents.xml" />
   <Other file="%ModDir%/Lua/Autorun/distillery.lua" />
   <Other file="%ModDir%/Moonshine.png" />
+  <Other file="%ModDir%/Dementonic.png" />
+  <Other file="%ModDir%/SoothingBeer.png" />
+  <Other file="%ModDir%/BananaSmoothie.png" />
+  <Other file="%ModDir%/OxyCola.png" />
   <Text file="%ModDir%/texts/english.xml" />
   <Text file="%ModDir%/texts/russian.xml" />
 </contentpackage>

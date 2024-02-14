@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <infotexts language="Russian" nowhitespace="false" translatedname="Русский">
 
-<entityname.moonshine>Самогон</entityname.moonshine>
-<entitydescription.moonshine>Напиток собственной перегонки неизвестного происхождения и особо отвратительного вкуса.</entitydescription.moonshine>
+<entityname.dist_moonshine>Самогон</entityname.dist_moonshine>
+<entitydescription.dist_moonshine>Напиток собственной перегонки неизвестного происхождения и особо отвратительного вкуса.</entitydescription.dist_moonshine>
+
+<entityname.dist_dementonic>Дементоник</entityname.dist_dementonic>
+<entitydescription.dist_dementonic>Снесёт крышу, и предсмертные кошмары вместе с ней.</entitydescription.dist_dementonic>
+
+<entityname.dist_soothingbeer>Мягкое Пиво</entityname.dist_soothingbeer>
+<entitydescription.dist_soothingbeer>Приятный вкус, смягчающий боль от ожогов.</entitydescription.dist_soothingbeer>
+
+<entityname.dist_bananasmoothie>Банановое Смузи</entityname.dist_bananasmoothie>
+<entitydescription.dist_bananasmoothie>Лёгкий и весёлый тоник.</entitydescription.dist_bananasmoothie>
+
+<entityname.dist_oxycola>Окси-Кола</entityname.dist_oxycola>
+<entitydescription.dist_oxycola>От неё ужасная отрыжка, но позволит подышать немного дольше.</entitydescription.dist_oxycola>
 
 </infotexts>

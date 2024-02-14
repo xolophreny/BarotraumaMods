@@ -1,74 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
-  <!--<Ethanol name="" identifier="ethanol_distilled" variantof="ethanol" aliases="ethanol" nameidentifier="ethanol" hideinmenus="true" >
-    <Fabricate suitablefabricators="distillery" requiredtime="120" requiredmoney="0" amount="2" >
-      <RequiredSkill identifier="medical" level="35" />
-      <RequiredSkill identifier="helm" level="40" />
-      <RequiredItem identifier="carbon" amount="2" />
-      <RequiredItem identifier="phosphorus" />
-      <RequiredItem identifier="silicon" />
-    </Fabricate>
-  </Ethanol>-->
 
-<Override>
-
-  <Ethanol name="" identifier="ethanol" category="Medical,Material" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="chemicalcrate" description="" Tags="smallitem,chem,medical,petfood2" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
-    <Upgrade gameversion="0.10.0.0" scale="0.5" />
-    <PreferredContainer primary="sprayer" amount="1" spawnprobability="1"/>
-    <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.2" />
-    <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="2" spawnprobability="0.3" />
-    <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.5" notcampaign="true"/>
-    <PreferredContainer primary="medfabcab" secondary="medcab"/>
-    <Price baseprice="60" minavailable="6" >
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="8" />
-      <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="10" />
-      <Price storeidentifier="merchantmilitary" multiplier="1.1" />
-      <Price storeidentifier="merchantmine" multiplier="1.1" />
-    </Price>
-    <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="80" fabricationlimitmin="5" fabricationlimitmax="10"/>
-    <Fabricate suitablefabricators="distillery" requiredtime="55" requiredmoney="0" amount="2" >
-      <RequiredSkill identifier="medical" level="35" />
-      <RequiredSkill identifier="helm" level="30" />
-      <RequiredItem identifier="carbon" amount="2" />
-      <RequiredItem identifier="phosphorus" />
-      <RequiredItem identifier="silicon" />
-    </Fabricate>
-    <Fabricate suitablefabricators="distillery" requiredtime="30" requiredmoney="0" amount="8" >
-      <RequiredSkill identifier="medical" level="15" />
-      <RequiredSkill identifier="helm" level="10" />
-      <RequiredItem identifier="yeastshroom" amount="2" />
-    </Fabricate>
-    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="256,768,64,64" origin="0.5,0.5" />
-    <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="435,452,30,57" depth="0.6" origin="0.5,0.5" />
-    <Body width="30" height="55" density="10.2" />   
-    <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
-      <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0"/>
-      <StatusEffect type="OnSecondaryUse" target="This,Character">
-        <Conditional Condition="lte 1" />
-        <Use/>
-      </StatusEffect>
-      <StatusEffect type="OnUse" target="This" Condition="-100.0" setvalue="true">
-        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
-      </StatusEffect>
-      <StatusEffect type="OnUse" target="UseTarget" delay="10" duration="10">
-        <Affliction identifier="drunk" amount="2.0" />
-        <ReduceAffliction identifier="psychosis" amount="2.0" />
-        <ReduceAffliction identifier="hallucinating" amount="2.0" />
-      </StatusEffect>
-      <StatusEffect type="OnUse" target="UseTarget" disabledeltatime="true">
-        <Affliction identifier="psychosisresistance" amount="600" />
-      </StatusEffect>
-      <StatusEffect type="OnBroken" target="This">
-        <Remove />
-      </StatusEffect>
-    </Holdable>
-    <AiTarget sightrange="1000" static="true" />
-  </Ethanol>
-
-</Override>
-
-  <Moonshine name="" identifier="moonshine" category="Medical,Material" maxstacksize="8" cargocontaineridentifier="mediccrate" description="" Tags="smallitem" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+  <Moonshine name="" identifier="dist_moonshine" category="Medical,Material" maxstacksize="8" cargocontaineridentifier="mediccrate" description="" Tags="smallitem" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.05" />
     <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="2" spawnprobability="0.1" />
     <PreferredContainer secondary="crewcab" minamount="1" maxamount="2" spawnprobability="0.3" />
@@ -80,7 +13,7 @@
       <Price storeidentifier="merchantmilitary" multiplier="1.1" />
       <Price storeidentifier="merchantmine" multiplier="1.2" />
     </Price>
-    <Fabricate suitablefabricators="distillery" requiredtime="60" requiredmoney="0" amount="2" >
+    <Fabricate suitablefabricators="distillery" requiredtime="40" requiredmoney="0" amount="2" >
       <RequiredSkill identifier="medical" level="10" />
       <RequiredSkill identifier="helm" level="20" />
       <RequiredItem identifier="ethanol" amount="2" />
@@ -89,8 +22,8 @@
     <Deconstruct time="5">
       <Item identifier="ethanol" />
     </Deconstruct>
-    <Sprite texture="%ModDir%/Moonshine.png" sourcerect="0,0,27,66" depth="0.6" origin="0.5,0.5" />
-    <Body width="27" height="66" density="15" />
+    <Sprite texture="%ModDir%/Moonshine.png" sourcerect="0,0,25,66" depth="0.6" origin="0.5,0.5" />
+    <Body width="25" height="66" density="15" />
     <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0"/>
       <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
@@ -99,7 +32,7 @@
       </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnUse" target="UseTarget" duration="30">
-        <Affliction identifier="psychosis" amount="2.4" />
+        <Affliction identifier="psychosis" amount="1.8" />
         <Affliction identifier="drunk" amount="2.5" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="UseTarget" delay="8" duration="5">
@@ -110,4 +43,177 @@
       </StatusEffect>
     </Holdable>
   </Moonshine>
+
+  <Dementonic name="" identifier="dist_dementonic" category="Medical,Material" maxstacksize="8" cargocontaineridentifier="mediccrate" description="" Tags="smallitem" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="2" spawnprobability="0.02" />
+    <PreferredContainer secondary="crewcab" minamount="1" maxamount="2" spawnprobability="0.05" notcampaign="true" />
+    <PreferredContainer primary="medfabcab" secondary="medcab"/>
+    <Price baseprice="590" minleveldifficulty="50" sold="false" >
+      <Price storeidentifier="merchantoutpost" multiplier="1.2" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" sold="true" minamount="1"/>
+      <Price storeidentifier="merchantresearch" multiplier="0.9" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" />
+      <Price storeidentifier="merchantmine" multiplier="1.2" />
+    </Price>
+    <Fabricate suitablefabricators="distillery" requiredtime="75" requiredmoney="0" amount="1" requiresrecipe="true">
+      <RequiredSkill identifier="medical" level="35" />
+      <RequiredSkill identifier="helm" level="10" />
+      <RequiredItem identifier="ethanol" amount="1" />
+      <RequiredItem identifier="tobaccobud" amount="1" />
+      <RequiredItem identifier="dementonite" amount="2" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="ethanol" />
+    </Deconstruct>
+    <Sprite texture="%ModDir%/Dementonic.png" sourcerect="0,0,25,25" depth="0.6" origin="0.5,0.5" />
+    <Body width="25" height="25" density="15" />
+    <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0"/>
+      <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
+        <Conditional Condition="lte 1" />
+        <Use/>
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="UseTarget" duration="30">
+        <Affliction identifier="psychosis" amount="3.0" />
+        <Affliction identifier="drunk" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="UseTarget" delay="5" duration="5">
+        <ReduceAffliction identifier="reaperstax" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+  </Dementonic>
+
+  <SoothingBeer name="" identifier="dist_soothingbeer" category="Medical,Material" maxstacksize="8" cargocontaineridentifier="mediccrate" description="" Tags="smallitem" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.15" />
+    <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="2" spawnprobability="0.25" />
+    <PreferredContainer secondary="crewcab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" />
+    <PreferredContainer primary="medfabcab" secondary="medcab"/>
+    <Price baseprice="155" minleveldifficulty="12" sold="true" minamount="1">
+      <Price storeidentifier="merchantoutpost" multiplier="1.2" />
+      <Price storeidentifier="merchantcity" multiplier="0.8" minamount="2"/>
+      <Price storeidentifier="merchantresearch" multiplier="0.9" sold="false"/>
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" sold="false"/>
+      <Price storeidentifier="merchantmine" multiplier="1.2" />
+    </Price>
+    <Fabricate suitablefabricators="distillery" requiredtime="45" requiredmoney="0" amount="1" >
+      <RequiredSkill identifier="medical" level="10" />
+      <RequiredSkill identifier="helm" level="10" />
+      <RequiredItem identifier="ethanol" amount="1" />
+      <RequiredItem identifier="tobaccobud" amount="1" />
+      <RequiredItem identifier="creepingorange" amount="1" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="ethanol" />
+    </Deconstruct>
+    <Sprite texture="%ModDir%/SoothingBeer.png" sourcerect="0,0,28,55" depth="0.6" origin="0.5,0.5" />
+    <Body width="28" height="55" density="15" />
+    <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0"/>
+      <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
+        <Conditional Condition="lte 1" />
+        <Use/>
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="UseTarget" duration="15">
+        <ReduceAffliction identifier="burn" amount="2.5" />
+        <Affliction identifier="drunk" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="UseTarget" duration="10">
+        <Affliction identifier="psychosisresistance" amount="60" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+  </SoothingBeer>
+
+  <BananaSmoothie name="" identifier="dist_bananasmoothie" category="Medical,Material" maxstacksize="8" cargocontaineridentifier="mediccrate" description="" Tags="smallitem" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="2" spawnprobability="0.1" />
+    <PreferredContainer secondary="crewcab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" />
+    <PreferredContainer primary="medfabcab" secondary="medcab"/>
+    <Price baseprice="140" minleveldifficulty="25" sold="true" minamount="1">
+      <Price storeidentifier="merchantoutpost" multiplier="1.2" sold="false"/>
+      <Price storeidentifier="merchantcity" multiplier="0.8" minamount="2"/>
+      <Price storeidentifier="merchantresearch" multiplier="0.9" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" sold="false"/>
+      <Price storeidentifier="merchantmine" multiplier="1.2" sold="false"/>
+    </Price>
+    <Fabricate suitablefabricators="distillery" requiredtime="20" requiredmoney="0" amount="1" >
+      <RequiredSkill identifier="medical" level="5" />
+      <RequiredSkill identifier="helm" level="5" />
+      <RequiredItem identifier="banana" amount="2" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="potassium" />
+    </Deconstruct>
+    <Sprite texture="%ModDir%/BananaSmoothie.png" sourcerect="0,0,20,27" depth="0.6" origin="0.5,0.5" />
+    <Body width="20" height="27" density="15" />
+    <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0"/>
+      <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
+        <Conditional Condition="lte 1" />
+        <Use/>
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="UseTarget" duration="15">
+        <Affliction identifier="haste" amount="8" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="UseTarget" duration="5">
+        <Affliction identifier="strengthen" amount="40" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+  </BananaSmoothie>
+
+  <Oxycola name="" identifier="dist_oxycola" category="Medical,Material" maxstacksize="8" cargocontaineridentifier="mediccrate" description="" Tags="smallitem" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="2" spawnprobability="0.1" />
+    <PreferredContainer secondary="crewcab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" />
+    <PreferredContainer primary="medfabcab" secondary="medcab"/>
+    <Price baseprice="150" minleveldifficulty="12" sold="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1.2"/>
+      <Price storeidentifier="merchantcity" multiplier="0.8" sold="true" minamount="2"/>
+      <Price storeidentifier="merchantresearch" multiplier="0.9" sold="true"/>
+      <Price storeidentifier="merchantmilitary" multiplier="1.1"/>
+      <Price storeidentifier="merchantmine" multiplier="1.2" sold="true" minamount="1"/>
+    </Price>
+    <Fabricate suitablefabricators="distillery" requiredtime="20" requiredmoney="0" amount="1" >
+      <RequiredSkill identifier="medical" level="20" />
+      <RequiredSkill identifier="helm" level="5" />
+      <RequiredItem identifier="liquidoxygenite" amount="1" />
+      <RequiredItem identifier="sodium" amount="1" />
+      <RequiredItem identifier="chlorine" amount="1" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="potassium" />
+    </Deconstruct>
+    <Sprite texture="%ModDir%/OxyCola.png" sourcerect="0,0,28,55" depth="0.6" origin="0.5,0.5" />
+    <Body width="28" height="55" density="15" />
+    <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0"/>
+      <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
+        <Conditional Condition="lte 1" />
+        <Use/>
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="UseTarget" duration="50">
+        <ReduceAffliction identifier="oxygenlow" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="UseTarget" duration="10">
+        <Affliction identifier="nausea" amount="4" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+  </Oxycola>
+
 </Items>

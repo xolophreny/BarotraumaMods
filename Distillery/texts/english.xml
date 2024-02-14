@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <infotexts language="English" nowhitespace="false" translatedname="English">
 
-<entityname.moonshine>Moonshine</entityname.moonshine>
-<entitydescription.moonshine>Shoddily distilled potable of dubious origin and distinctly hostile taste.</entitydescription.moonshine>
+<entityname.dist_moonshine>Moonshine</entityname.dist_moonshine>
+<entitydescription.dist_moonshine>Shoddily distilled potable of dubious origin and distinctly hostile taste.</entitydescription.dist_moonshine>
+
+<entityname.dist_dementonic>Dementonic</entityname.dist_dementonic>
+<entitydescription.dist_dementonic>Will gimp your sanity in just the right way to rid you of haunting nightmares.</entitydescription.dist_dementonic>
+
+<entityname.dist_soothingbeer>Soothing Beer</entityname.dist_soothingbeer>
+<entitydescription.dist_soothingbeer>Pleasantly calming and is said to numb the pain from burns.</entitydescription.dist_soothingbeer>
+
+<entityname.dist_bananasmoothie>Banana Smoothie</entityname.dist_bananasmoothie>
+<entitydescription.dist_bananasmoothie>A light and cheery pick-me-up.</entitydescription.dist_bananasmoothie>
+
+<entityname.dist_oxycola>Oxy-Cola</entityname.dist_oxycola>
+<entitydescription.dist_oxycola>Causes terrible burps, but could keep you breathing for a while.</entitydescription.dist_oxycola>
 
 </infotexts>
