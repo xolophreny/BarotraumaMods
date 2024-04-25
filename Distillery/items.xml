@@ -17,13 +17,15 @@
       <RequiredSkill identifier="medical" level="10" />
       <RequiredSkill identifier="helm" level="20" />
       <RequiredItem identifier="ethanol" amount="2" />
-      <RequiredItem identifier="creepingorange" />
+      <RequiredItem tag="distillable" />
     </Fabricate>
     <Deconstruct time="5">
       <Item identifier="ethanol" />
     </Deconstruct>
     <Sprite texture="%ModDir%/Moonshine.png" sourcerect="0,0,25,66" depth="0.6" origin="0.5,0.5" />
     <Body width="25" height="66" density="15" />
+    <SuitableTreatment type="infection" suitability="30" />
+    <SuitableTreatment type="burn" suitability="-3" />
     <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0"/>
       <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
@@ -31,13 +33,18 @@
         <Use/>
       </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
-      <StatusEffect type="OnUse" target="UseTarget" duration="30">
-        <Affliction identifier="psychosis" amount="1.8" />
-        <Affliction identifier="drunk" amount="2.5" />
+      <StatusEffect type="OnSecondaryUse" target="UseTarget" duration="20" stackable="false">
+        <Affliction identifier="psychosis" amount="2.7" />
+        <Affliction identifier="drunk" amount="3.6" />
       </StatusEffect>
-      <StatusEffect type="OnUse" target="UseTarget" delay="8" duration="5">
+      <StatusEffect type="OnSecondaryUse" target="UseTarget" delay="8" duration="5" stackable="false">
         <Affliction identifier="incrementalstun" amount="24" />
       </StatusEffect>
+      <StatusEffect type="OnUse" target="This, Limb" duration="8">
+        <ReduceAffliction identifier="infection" amount="1.5" />
+        <Affliction identifier="burn" amount="0.2" /> 
+      </StatusEffect>
+
       <StatusEffect type="OnBroken" target="This">
         <Remove />
       </StatusEffect>
@@ -62,12 +69,15 @@
       <RequiredItem identifier="ethanol" amount="1" />
       <RequiredItem identifier="tobaccobud" amount="1" />
       <RequiredItem identifier="dementonite" amount="2" />
+      <RequiredItem identifier="adrenaline" amount="1" />
     </Fabricate>
     <Deconstruct time="5">
       <Item identifier="ethanol" />
     </Deconstruct>
     <Sprite texture="%ModDir%/Dementonic.png" sourcerect="0,0,27,27" depth="0.6" origin="0.5,0.5" />
     <Body width="27" height="27" density="15" />
+    <SuitableTreatment type="infection" suitability="10" />
+    <SuitableTreatment type="burn" suitability="-3" />
     <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0"/>
       <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
@@ -75,12 +85,31 @@
         <Use/>
       </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
-      <StatusEffect type="OnUse" target="UseTarget" duration="30">
+      <StatusEffect type="OnSecondaryUse" target="UseTarget" duration="30" stackable="false">
         <Affliction identifier="psychosis" amount="3.0" />
         <Affliction identifier="drunk" amount="1.5" />
       </StatusEffect>
-      <StatusEffect type="OnUse" target="UseTarget" delay="5" duration="5">
-        <ReduceAffliction identifier="reaperstax" amount="5" />
+      <StatusEffect type="OnSecondaryUse" target = "UseTarget" duration="5" stackable="false">
+        <Affliction identifier="adrenalinerush" amount="2.0" />
+      </StatusEffect>
+      <StatusEffect type="OnSecondaryUse" target="UseTarget" delay="5" stackable="false">
+        <GiveSkill skillidentifier="weapons" amount="5" triggertalents="false" />
+      </StatusEffect>
+      <StatusEffect type="OnSecondaryUse" target="UseTarget" delay="10" stackable="false">
+        <GiveSkill skillidentifier="electrical" amount="5" triggertalents="false" />
+      </StatusEffect>
+      <StatusEffect type="OnSecondaryUse" target="UseTarget" delay="15" stackable="false">
+        <GiveSkill skillidentifier="mechanical" amount="5" triggertalents="false" />
+      </StatusEffect>
+      <StatusEffect type="OnSecondaryUse" target="UseTarget" delay="20" stackable="false">
+        <GiveSkill skillidentifier="medical" amount="5" triggertalents="false" />
+      </StatusEffect>
+      <StatusEffect type="OnSecondaryUse" target="UseTarget" delay="25" stackable="false">
+        <GiveSkill skillidentifier="helm" amount="5" triggertalents="false" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This, Limb" duration="8">
+        <ReduceAffliction identifier="infection" amount="0.8" />
+        <Affliction identifier="burn" amount="0.3" /> 
       </StatusEffect>
       <StatusEffect type="OnBroken" target="This">
         <Remove />
@@ -105,13 +134,14 @@
       <RequiredSkill identifier="helm" level="10" />
       <RequiredItem identifier="ethanol" amount="1" />
       <RequiredItem identifier="tobaccobud" amount="1" />
-      <RequiredItem identifier="creepingorange" amount="1" />
+      <RequiredItem tag="distillable" amount="1" />
     </Fabricate>
     <Deconstruct time="5">
       <Item identifier="ethanol" />
     </Deconstruct>
     <Sprite texture="%ModDir%/SoothingBeer.png" sourcerect="0,0,28,55" depth="0.6" origin="0.5,0.5" />
     <Body width="28" height="55" density="15" />
+    <SuitableTreatment type="burn" suitability="15" />
     <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0"/>
       <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
@@ -119,12 +149,15 @@
         <Use/>
       </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
-      <StatusEffect type="OnUse" target="UseTarget" duration="15">
+      <StatusEffect type="OnSecondaryUse" target="UseTarget" duration="15" stackable="false">
         <ReduceAffliction identifier="burn" amount="2.5" />
         <Affliction identifier="drunk" amount="1.5" />
       </StatusEffect>
-      <StatusEffect type="OnUse" target="UseTarget" duration="10">
+      <StatusEffect type="OnSecondaryUse" target="UseTarget" duration="10" stackable="false">
         <Affliction identifier="psychosisresistance" amount="60" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This, Limb" duration="10">
+        <ReduceAffliction identifier="burn" amount="1.0" /> 
       </StatusEffect>
       <StatusEffect type="OnBroken" target="This">
         <Remove />
@@ -161,10 +194,10 @@
         <Use/>
       </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
-      <StatusEffect type="OnUse" target="UseTarget" duration="15">
+      <StatusEffect type="OnSecondaryUse" target="UseTarget" duration="15" stackable="false">
         <Affliction identifier="haste" amount="8" />
       </StatusEffect>
-      <StatusEffect type="OnUse" target="UseTarget" duration="5">
+      <StatusEffect type="OnSecondaryUse" target="UseTarget" duration="5" stackable="false">
         <Affliction identifier="strengthen" amount="40" />
       </StatusEffect>
       <StatusEffect type="OnBroken" target="This">
@@ -193,7 +226,7 @@
       <RequiredItem identifier="chlorine" amount="1" />
     </Fabricate>
     <Deconstruct time="5">
-      <Item identifier="potassium" />
+      <Item identifier="sodium" />
     </Deconstruct>
     <Sprite texture="%ModDir%/OxyCola.png" sourcerect="0,0,28,55" depth="0.6" origin="0.5,0.5" />
     <Body width="28" height="55" density="15" />
@@ -204,10 +237,10 @@
         <Use/>
       </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
-      <StatusEffect type="OnUse" target="UseTarget" duration="50">
+      <StatusEffect type="OnSecondaryUse" target="UseTarget" duration="50" stackable="false">
         <ReduceAffliction identifier="oxygenlow" amount="6" />
       </StatusEffect>
-      <StatusEffect type="OnUse" target="UseTarget" duration="10">
+      <StatusEffect type="OnSecondaryUse" target="UseTarget" duration="10" stackable="false">
         <Affliction identifier="nausea" amount="4" />
       </StatusEffect>
       <StatusEffect type="OnBroken" target="This">

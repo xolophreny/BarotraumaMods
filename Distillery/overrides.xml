@@ -18,8 +18,8 @@
   <Ethanol name="" identifier="ethanol" category="Medical,Material" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="chemicalcrate" description="" Tags="smallitem,chem,medical,petfood2" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
     <Upgrade gameversion="0.10.0.0" scale="0.5" />
     <PreferredContainer primary="sprayer" amount="1" spawnprobability="1"/>
-    <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.2" />
-    <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="2" spawnprobability="0.3" />
+    <PreferredContainer secondary="wreckmedcab,abandonedmedcab,piratemedcab" amount="1" spawnprobability="0.2" />
+    <PreferredContainer secondary="abandonedcrewcab,piratecrewcab" minamount="1" maxamount="2" spawnprobability="0.3" />
     <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.5" notcampaign="true"/>
     <PreferredContainer primary="medfabcab" secondary="medcab"/>
     <Price baseprice="60" minavailable="6" >
@@ -28,6 +28,7 @@
       <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="10" />
       <Price storeidentifier="merchantmilitary" multiplier="1.1" />
       <Price storeidentifier="merchantmine" multiplier="1.1" />
+      <Price storeidentifier="merchantclown" minavailable="0" maxavailable="2" />
     </Price>
     <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="80" fabricationlimitmin="5" fabricationlimitmax="10"/>
     <Fabricate suitablefabricators="distillery" requiredtime="55" requiredmoney="0" amount="2" >
@@ -44,7 +45,9 @@
     </Fabricate>
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="256,768,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="435,452,30,57" depth="0.6" origin="0.5,0.5" />
-    <Body width="30" height="55" density="10.2" />   
+    <Body width="30" height="55" density="20" />
+    <SuitableTreatment type="infection" suitability="15" />
+    <SuitableTreatment type="burn" suitability ="-3" />
     <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0"/>
       <StatusEffect type="OnSecondaryUse" target="This,Character">
@@ -54,13 +57,20 @@
       <StatusEffect type="OnUse" target="This" Condition="-100.0" setvalue="true">
         <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
       </StatusEffect>
-      <StatusEffect type="OnUse" target="UseTarget" delay="10" duration="10">
+      <!-- When Ethanol is drunk -->
+      <StatusEffect type="OnSecondaryUse" target="UseTarget" delay="10" duration="10" stackable="false">
         <Affliction identifier="drunk" amount="2.0" />
         <ReduceAffliction identifier="psychosis" amount="2.0" />
         <ReduceAffliction identifier="hallucinating" amount="2.0" />
+        <Affliction identifier="psychosisresistance" amount="30" />
       </StatusEffect>
-      <StatusEffect type="OnUse" target="UseTarget" disabledeltatime="true">
-        <Affliction identifier="psychosisresistance" amount="600" />
+       <StatusEffect type="OnSecondaryUse" target="This" >
+        <ParticleEmitter particle="waterdrop" particlespersecond="10" scalemin="1" scalemax="1.5" distancemin="20" distancemax="25" anglemin="80" anglemax="100" velocitymin="40" velocitymax="60" copyentityangle="true" lifetimemultiplier="0.10" />
+      </StatusEffect>
+      <!-- When Ethanol is used in Health GUI -->
+      <StatusEffect type="OnUse" target="This, Limb" duration="10">
+        <ReduceAffliction identifier="infection" amount="0.8" />
+        <Affliction identifier="burn" amount="0.15" /> 
       </StatusEffect>
       <StatusEffect type="OnBroken" target="This">
         <Remove />
