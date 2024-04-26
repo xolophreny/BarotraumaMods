@@ -28,23 +28,21 @@
     <SuitableTreatment type="burn" suitability="-3" />
     <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0"/>
-      <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
-        <Conditional Condition="lte 1" />
-        <Use/>
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
-      <StatusEffect type="OnSecondaryUse" target="UseTarget" duration="20" stackable="false">
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" duration="20" stackable="false">
+        <Conditional Condition="lte 1" />
         <Affliction identifier="psychosis" amount="2.7" />
         <Affliction identifier="drunk" amount="3.6" />
+        <Remove />
       </StatusEffect>
-      <StatusEffect type="OnSecondaryUse" target="UseTarget" delay="8" duration="5" stackable="false">
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" delay="8" duration="5" stackable="false">
+        <Conditional Condition="lte 1" />
         <Affliction identifier="incrementalstun" amount="24" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="This, Limb" duration="8">
         <ReduceAffliction identifier="infection" amount="1.5" />
         <Affliction identifier="burn" amount="0.2" /> 
       </StatusEffect>
-
       <StatusEffect type="OnBroken" target="This">
         <Remove />
       </StatusEffect>
@@ -80,31 +78,35 @@
     <SuitableTreatment type="burn" suitability="-3" />
     <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0"/>
-      <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
-        <Conditional Condition="lte 1" />
-        <Use/>
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
-      <StatusEffect type="OnSecondaryUse" target="UseTarget" duration="30" stackable="false">
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" duration="30" stackable="false">
+        <Conditional Condition="lte 1" />
         <Affliction identifier="psychosis" amount="3.0" />
         <Affliction identifier="drunk" amount="1.5" />
+        <Remove />
       </StatusEffect>
-      <StatusEffect type="OnSecondaryUse" target = "UseTarget" duration="5" stackable="false">
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" duration="5" stackable="false">
+        <Conditional Condition="lte 1" />
         <Affliction identifier="adrenalinerush" amount="2.0" />
       </StatusEffect>
-      <StatusEffect type="OnSecondaryUse" target="UseTarget" delay="5" stackable="false">
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" delay="5" stackable="false">
+        <Conditional Condition="lte 1" />
         <GiveSkill skillidentifier="weapons" amount="5" triggertalents="false" />
       </StatusEffect>
-      <StatusEffect type="OnSecondaryUse" target="UseTarget" delay="10" stackable="false">
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" delay="10" stackable="false">
+        <Conditional Condition="lte 1" />
         <GiveSkill skillidentifier="electrical" amount="5" triggertalents="false" />
       </StatusEffect>
-      <StatusEffect type="OnSecondaryUse" target="UseTarget" delay="15" stackable="false">
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" delay="15" stackable="false">
+        <Conditional Condition="lte 1" />
         <GiveSkill skillidentifier="mechanical" amount="5" triggertalents="false" />
       </StatusEffect>
-      <StatusEffect type="OnSecondaryUse" target="UseTarget" delay="20" stackable="false">
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" delay="20" stackable="false">
+        <Conditional Condition="lte 1" />
         <GiveSkill skillidentifier="medical" amount="5" triggertalents="false" />
       </StatusEffect>
-      <StatusEffect type="OnSecondaryUse" target="UseTarget" delay="25" stackable="false">
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" delay="25" stackable="false">
+        <Conditional Condition="lte 1" />
         <GiveSkill skillidentifier="helm" amount="5" triggertalents="false" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="This, Limb" duration="8">
@@ -144,16 +146,15 @@
     <SuitableTreatment type="burn" suitability="15" />
     <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0"/>
-      <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
-        <Conditional Condition="lte 1" />
-        <Use/>
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
-      <StatusEffect type="OnSecondaryUse" target="UseTarget" duration="15" stackable="false">
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" duration="15" stackable="false">
+        <Conditional Condition="lte 1" />
         <ReduceAffliction identifier="burn" amount="2.5" />
         <Affliction identifier="drunk" amount="1.5" />
+        <Remove />
       </StatusEffect>
-      <StatusEffect type="OnSecondaryUse" target="UseTarget" duration="10" stackable="false">
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" duration="10" stackable="false">
+        <Conditional Condition="lte 1" />
         <Affliction identifier="psychosisresistance" amount="60" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="This, Limb" duration="10">
@@ -189,15 +190,14 @@
     <Body width="20" height="27" density="15" />
     <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0"/>
-      <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
-        <Conditional Condition="lte 1" />
-        <Use/>
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
-      <StatusEffect type="OnSecondaryUse" target="UseTarget" duration="15" stackable="false">
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" duration="15" stackable="false">
+        <Conditional Condition="lte 1" />
         <Affliction identifier="haste" amount="8" />
+        <Remove />
       </StatusEffect>
-      <StatusEffect type="OnSecondaryUse" target="UseTarget" duration="5" stackable="false">
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" duration="5" stackable="false">
+        <Conditional Condition="lte 1" />
         <Affliction identifier="strengthen" amount="40" />
       </StatusEffect>
       <StatusEffect type="OnBroken" target="This">
@@ -232,15 +232,14 @@
     <Body width="28" height="55" density="15" />
     <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0"/>
-      <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
-        <Conditional Condition="lte 1" />
-        <Use/>
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
-      <StatusEffect type="OnSecondaryUse" target="UseTarget" duration="50" stackable="false">
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" duration="50" stackable="false">
+        <Conditional Condition="lte 1" />
         <ReduceAffliction identifier="oxygenlow" amount="6" />
+        <Remove />
       </StatusEffect>
-      <StatusEffect type="OnSecondaryUse" target="UseTarget" duration="10" stackable="false">
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" duration="10" stackable="false">
+        <Conditional Condition="lte 1" />
         <Affliction identifier="nausea" amount="4" />
       </StatusEffect>
       <StatusEffect type="OnBroken" target="This">

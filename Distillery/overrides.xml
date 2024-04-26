@@ -50,19 +50,17 @@
     <SuitableTreatment type="burn" suitability ="-3" />
     <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0"/>
-      <StatusEffect type="OnSecondaryUse" target="This,Character">
-        <Conditional Condition="lte 1" />
-        <Use/>
-      </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-100.0" setvalue="true">
         <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
       </StatusEffect>
       <!-- When Ethanol is drunk -->
-      <StatusEffect type="OnSecondaryUse" target="UseTarget" delay="10" duration="10" stackable="false">
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" delay="10" duration="10" stackable="false">
+        <Conditional Condition="lte 1" />
         <Affliction identifier="drunk" amount="2.0" />
         <ReduceAffliction identifier="psychosis" amount="2.0" />
         <ReduceAffliction identifier="hallucinating" amount="2.0" />
         <Affliction identifier="psychosisresistance" amount="30" />
+        <Remove />
       </StatusEffect>
        <StatusEffect type="OnSecondaryUse" target="This" >
         <ParticleEmitter particle="waterdrop" particlespersecond="10" scalemin="1" scalemax="1.5" distancemin="20" distancemax="25" anglemin="80" anglemax="100" velocitymin="40" velocitymax="60" copyentityangle="true" lifetimemultiplier="0.10" />
