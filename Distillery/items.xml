@@ -235,12 +235,20 @@
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnSecondaryUse" target="This,UseTarget" duration="50" stackable="false">
         <Conditional Condition="lte 1" />
-        <ReduceAffliction identifier="oxygenlow" amount="6" />
+        <ReduceAffliction identifier="oxygenlow" amount="5" />
         <Remove />
       </StatusEffect>
-      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" duration="10" stackable="false">
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" duration="50" delay="15" stackable="false">
         <Conditional Condition="lte 1" />
-        <Affliction identifier="nausea" amount="4" />
+        <ReduceAffliction identifier="oxygenlow" amount="2" />
+      </StatusEffect>
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" duration="12" delay="5" stackable="false">
+        <Conditional Condition="lte 1" />
+        <Affliction identifier="nausea" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" duration="15" delay="3" stackable="false">
+        <Conditional Condition="lte 1" />
+        <Affliction identifier="haste" amount="12" />
       </StatusEffect>
       <StatusEffect type="OnBroken" target="This">
         <Remove />
